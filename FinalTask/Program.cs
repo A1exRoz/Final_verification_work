@@ -12,3 +12,19 @@
 // [“Russia”, “Denmark”, “Kazan”] → []
 
 
+void InputArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write("Введите элемент массива: ");
+        string x = Console.ReadLine();
+        array[i] = x;
+    }
+}
+
+Console.Clear();
+Console.Write("Введите кол-во элементов массива: ");
+int n = Convert.ToInt32(Console.ReadLine());
+string[] array = new string[n];
+InputArray(array);
+Console.WriteLine($"Исходный массив: [{string.Join(", ", array)}]");
