@@ -26,13 +26,11 @@ void ReleaseArray(string[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length < 3)
-            Console.Write($"{array[i]}, ");
+        if (array[i].Length <= 3)
+            Console.Write($"{array[i]} ");
         else i++;
     }
 }
-
-
 
 Console.Clear();
 Console.Write("Введите кол-во элементов массива: ");
@@ -40,4 +38,5 @@ int n = Convert.ToInt32(Console.ReadLine());
 string[] array = new string[n];
 InputArray(array);
 Console.WriteLine($"Исходный массив: [{string.Join(", ", array)}]");
+Console.WriteLine();
 ReleaseArray(array);
