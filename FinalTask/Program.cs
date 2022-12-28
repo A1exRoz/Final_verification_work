@@ -28,7 +28,6 @@ void ReleaseArray(string[] array)
     {
         if (array[i].Length <= 3)
             Console.Write($"{array[i]} ");
-        else i++;
     }
 }
 
