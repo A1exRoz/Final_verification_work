@@ -22,12 +22,21 @@ void InputArray(string[] array)
     }
 }
 
-void ReleaseArray(string[] array)
+// void ReleaseArray(string[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+    // {
+    //     if (array[i].Length <= 3)
+    //         Console.Write($"{array[i]} ");
+    // }
+// }
+
+void ReleaseArray(string[] array, string[] copyArray)
 {
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
-            Console.Write($"{array[i]} ");
+            copyArray[i] =  array[i];
     }
 }
 
@@ -36,6 +45,8 @@ Console.Write("Введите кол-во элементов массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 string[] array = new string[n];
 InputArray(array);
+string[] copyArray = new string[array.Length];
 Console.WriteLine($"Исходный массив: [{string.Join(", ", array)}]");
 Console.WriteLine();
-ReleaseArray(array);
+ReleaseArray(array, copyArray);
+Console.WriteLine($"Коннечный массив: [{string.Join(", ", copyArray)}]");
